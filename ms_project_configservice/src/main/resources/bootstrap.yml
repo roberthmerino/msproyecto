@@ -2,6 +2,8 @@ server:
   port: 8081
   
 spring:
+  profiles:
+    active: composite
   cloud:
     config:
       server:
