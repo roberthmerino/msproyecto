@@ -6,7 +6,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/roberthmerino/ms-course-youtube.git
+          uri: https://github.com/roberthmerino/msproyecto.git
           searchPaths: config-data
           username: roberthmerino
           password: 190477opor
