@@ -1,41 +1,24 @@
-#Application Configuration
 server:
-  port: 8091
-  error:
-    include-message: always
-    include-binding-errors: always
-    
-# To See H2 Console in Browser:
-# http://localhost:8091/h2-console
-# Enabling H2 Console
+  port: 8089
+  
 spring:
-  h2:
-    console:
-      enabled: true
-      
-  # ===============================
-  # DB
-  # ===============================
   datasource:
-    url: jdbc:h2:mem:productDB;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
-    driverClassName: org.h2.Driver
-    username: sa
-    password:
+    url: jdbc:mysql://localhost:3306/productoDB
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 190477opor
     
-  # ===============================
-  # JPA / HIBERNATE
-  # ===============================
   jpa:
-    defer-datasource-initialization: true
     show-sql: true
     hibernate:
-      ddl-auto: update
-    database-platform: org.hibernate.dialect.H2Dialect
+      ddl-auto: none
+    database-platform: org.hibernate.dialect.MySQL8Dialect
     properties:
       hibernate:
         show_sql: true
         use_sql_comments: false
         format_sql: false
-  sql:
-    init:
-      platform: h2
+        
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
